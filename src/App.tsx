@@ -5,7 +5,7 @@ import "@navikt/ds-css";
 function App() {
   return (
     <section>
-      <Komponent tekst={useTranslate("microfrontendTitle")} />
+      <Komponent heading={useTranslate("heading")} description={useTranslate("description")} />
     </section>
   );
 }

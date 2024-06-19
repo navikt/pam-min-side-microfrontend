@@ -1,17 +1,33 @@
-import { Panel } from "@navikt/ds-react";
+import { BodyShort, Heading } from "@navikt/ds-react";
+import LinkCard from "./card/LinkCard";
+import { cvUrl } from "../api/urls";
+import { Piktogram } from "./Piktogram";
 import "./Komponent.css";
 
 interface Props {
-  tekst: string;
+  heading: string;
+  description: string;
 }
 
-const Komponent = ({ tekst }: Props) => {
+const Komponent = ({ heading, description }: Props) => {
+  const url = cvUrl;
+
   return (
-    <div className="komponent">
-      <Panel border>
-        <p>{tekst} 😊🎉</p>
-      </Panel>
-    </div>
+    <LinkCard href={url}>
+      <div className="flex">
+        <div>
+          <Piktogram />
+        </div>
+        <div>
+          <Heading level="3" size="small" className="heading">
+            {heading}
+          </Heading>
+          <BodyShort size="small" className="detail">
+            {description}
+          </BodyShort>
+        </div>
+      </div>
+    </LinkCard>
   );
 };
 

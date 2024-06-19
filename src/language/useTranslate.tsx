@@ -6,10 +6,15 @@ type Text = {
 };
 
 const text: Text = {
-  microfrontendTitle: {
-    nb: "Dette kommer til å bli en awesome mikrofrontend!",
-    nn: "Dette kjem til å bli ein awesome mikrofrontend!",
-    en: "This is going to be an amazing microfrontend!",
+  heading: {
+    nb: "CV",
+    nn: "CV",
+    en: "CV",
+  },
+  description: {
+    nb: "Opprett eller endre din CV",
+    nn: "Opprett eller endre din CV",
+    en: "Create or change your CV",
   },
 };
 
