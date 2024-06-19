@@ -4,7 +4,7 @@ import Komponent from "./Komponent";
 
 describe("Simple working test for Komponent", () => {
   it("has a text", () => {
-    render(<Komponent tekst="tekst" />);
+    render(<Komponent heading="heading" description="description" />);
     expect(screen.getByText(/tekst/)).toBeDefined();
   });
 });
