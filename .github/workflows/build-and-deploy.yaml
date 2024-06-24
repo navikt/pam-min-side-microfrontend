@@ -51,13 +51,13 @@ jobs:
           first_file=$(echo $files | cut -d',' -f1)
           echo "url=https://cdn.nav.no/$first_file" >> $GITHUB_OUTPUT
 
-      - name: Build and push docker image
-        uses: nais/docker-build-push@v0
-        id: docker-build-push
-        with:
-          team: teampam
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+#      - name: Build and push docker image
+#        uses: nais/docker-build-push@v0
+#        id: docker-build-push
+#        with:
+#          team: teampam
+#          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+#          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
   update-manifest-dev:
     needs: build
