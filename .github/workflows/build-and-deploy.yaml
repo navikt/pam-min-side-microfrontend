@@ -58,13 +58,13 @@ jobs:
       id: "pam-min-side-microfrontend"
       url: ${{needs.build.outputs.cdn_url}}
     secrets: inherit
-
-  update-manifest-prod:
-    if: github.ref == 'refs/heads/main'
-    needs: build
-    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
-    with:
-      cluster: prod-gcp
-      id: "pam-min-side-microfrontend"
-      url: ${{needs.build.outputs.cdn_url}}
-    secrets: inherit
+#
+#  update-manifest-prod:
+#    if: github.ref == 'refs/heads/main'
+#    needs: build
+#    uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v2.yaml@main
+#    with:
+#      cluster: prod-gcp
+#      id: "pam-min-side-microfrontend"
+#      url: ${{needs.build.outputs.cdn_url}}
+#    secrets: inherit
