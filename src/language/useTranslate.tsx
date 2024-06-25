@@ -12,9 +12,9 @@ const text: Text = {
     en: "CV",
   },
   description: {
-    nb: "Opprett eller endre din CV",
-    nn: "Opprett eller endre din CV",
-    en: "Create or change your CV",
+    nb: "Opprett eller endre din CV på Arbeidsplassen",
+    nn: "Opprett eller endre din CV på Arbeidsplassen",
+    en: "Create or change your CV on Arbeidsplassen",
   },
 };
 
