@@ -2,7 +2,7 @@ import { BodyShort, Heading } from "@navikt/ds-react";
 import LinkCard from "./card/LinkCard";
 import { cvUrl } from "../api/urls";
 import { Piktogram } from "./Piktogram";
-import "./Komponent.css";
+import styles from "./Komponent.module.css";
 
 interface Props {
   heading: string;
@@ -14,15 +14,15 @@ const Komponent = ({ heading, description }: Props) => {
 
   return (
     <LinkCard href={url}>
-      <div className="flex">
+      <div className={styles.flex}>
         <div>
           <Piktogram />
         </div>
         <div>
-          <Heading level="3" size="small" className="heading">
+          <Heading level="3" size="small" className={styles.heading}>
             {heading}
           </Heading>
-          <BodyShort size="small" className="detail">
+          <BodyShort size="small" className={styles.detail}>
             {description}
           </BodyShort>
         </div>
