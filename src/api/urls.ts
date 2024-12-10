@@ -16,9 +16,9 @@ export const getEnvironment = () => {
 type EnvUrl = { development: string; production: string; local: string };
 
 const CV_URL: EnvUrl = {
-  local: "http://localhost:3000/min-side",
-  development: "https://arbeidsplassen.intern.dev.nav.no/min-side",
-  production: "https://arbeidsplassen.nav.no/min-side",
+  local: "http://localhost:3000/min-cv",
+  development: "https://www.ansatt.dev.nav.no/min-cv",
+  production: "https://www.nav.no/min-cv",
 };
 
 export const cvUrl = CV_URL[getEnvironment()];
