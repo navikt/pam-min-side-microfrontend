@@ -7,14 +7,14 @@ type Text = {
 
 const text: Text = {
   heading: {
-    nb: "CV",
-    nn: "CV",
-    en: "CV",
+    nb: "Min CV",
+    nn: "Min CV",
+    en: "My CV",
   },
   description: {
-    nb: "Opprett eller endre din CV på Arbeidsplassen",
-    nn: "Opprett eller endre din CV på Arbeidsplassen",
-    en: "Create or change your CV on Arbeidsplassen",
+    nb: "Nå kan du opprette eller endre din CV på Nav.no",
+    nn: "No kan du opprette eller endre CV-en din på Nav.no",
+    en: "Create or change your CV at Nav.no",
   },
 };
 
