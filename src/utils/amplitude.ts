@@ -1,17 +1,11 @@
-import { init, track } from "@amplitude/analytics-browser";
+import { logAmplitudeEvent } from "@navikt/nav-dekoratoren-moduler";
 
-export const initAmplitude = () => {
-  init("default", undefined, {
-    useBatch: true,
-    serverUrl: "https://amplitude.nav.no/collect-auto",
-    ingestionMetadata: {
-      sourceName: window.location.toString(),
+export const logNavigereEvent = () => {
+  logAmplitudeEvent({
+    origin: "pam-min-side-microfrontend",
+    eventName: "navigere",
+    eventData: {
+      komponent: "pam-min-side-microfrontend",
     },
   });
-};
-
-//TODO: komponent må fylles ut med et identifiserende navn for microfrontend
-//Default er at navnet på appen blir benyttet ved replace av "pam-min-side-microfrontend"
-export const logNavigereEvent = () => {
-  track("navigere", { komponent: "pam-min-side-microfrontend" });
 };
