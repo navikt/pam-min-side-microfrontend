@@ -1,17 +1,12 @@
 export const text = {
   title: {
-    nb: "tms-microfrontend-template-ssr (nb)",
-    en: "tms-microfrontend-template-ssr (en)",
-    nn: "tms-microfrontend-template-ssr (nn)",
+    nb: "Min CV",
+    en: "My CV",
+    nn: "Min CV",
   },
-  link: {
-    nb: "Lenke",
-    en: "Link",
-    nn: "Lenkje",
-  },
-  name: {
-    nb: "Navn",
-    en: "Name",
-    nn: "Navn",
+  description: {
+    nb: "Nå kan du opprette eller endre din CV på Nav.no",
+    nn: "No kan du opprette eller endre CV-en din på Nav.no",
+    en: "Create or change your CV at Nav.no",
   },
 };

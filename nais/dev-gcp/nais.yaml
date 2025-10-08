@@ -1,10 +1,10 @@
 apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
-  name: tms-microfrontend-template-ssr # Change this to your application name
-  namespace: min-side # Change this to your namespace
+  name: pam-min-side-micofrontend # Change this to your application name
+  namespace: teampam # Change this to your namespace
   labels:
-    team: min-side # Change this to your team name
+    team: teampam # Change this to your team name
 spec:
   tokenx:
     enabled: true
@@ -30,6 +30,3 @@ spec:
     requests:
       cpu: "20m"
       memory: 128Mi
-  env: # Add your environment variables here
-    - name: EXAMPLE_API_URL
-      value: "https://example.dev.nav.no/api"

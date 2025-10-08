@@ -1,4 +1,4 @@
-# tms-microfrontend-template-ssr
+# pam-min-side-micofrontend
 
 Kan brukes som utgangspunkt for å opprette nye server-side rendrede microfrontends til Min Side.
 

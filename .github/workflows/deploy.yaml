@@ -38,7 +38,7 @@ jobs:
         with:
           team: min-side # Change this to your team name
           source: ./dist/client/_astro
-          destination: 'tms-microfrontend-template-ssr' # Change this to your application name
+          destination: 'pam-min-side-micofrontend' # Change this to your application name
 
       - name: "Build and push"
         uses: nais/docker-build-push@v0
@@ -53,10 +53,10 @@ jobs:
     uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v3.yaml@main
     needs: build
     with:
-      id: "tms-microfrontend-template-ssr" # Change this to your application name
-      url: "http://tms-microfrontend-template-ssr" # Change the url to contain your application name. Example: http://my-app
-      appname: "tms-microfrontend-template-ssr" # Change this to your application name
-      namespace: "min-side" # Change this to your namespace
+      id: "pam-min-side-micofrontend" # Change this to your application name
+      url: "http://pam-min-side-micofrontend" # Change the url to contain your application name. Example: http://my-app
+      appname: "pam-min-side-micofrontend" # Change this to your application name
+      namespace: "teampam" # Change this to your namespace
       cluster: dev-gcp
       commitmsg: ${{ github.event.head_commit.message}}
       fallback: "fallback" # Should containt the path to the fallback page after src/pages/[locale]/... Only needs to be changed if you move the fallback in the pages structure
@@ -68,10 +68,10 @@ jobs:
   #   uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v3.yaml@main
   #   needs: build
   #   with:
-  #     id: "tms-microfrontend-template-ssr-id"
-  #     url: "http://tms-microfrontend-template-ssr.min-side"
-  #     appname: "tms-microfrontend-template-ssr"
-  #     namespace: "team-namespace"
+  #     id: "pam-min-side-micofrontend-id"
+  #     url: "http://pam-min-side-micofrontend.min-side"
+  #     appname: "pam-min-side-micofrontend"
+  #     namespace: "teampam"
   #     cluster: prod-gcp
   #     commitmsg: ${{ github.event.head_commit.message}}
   #     fallback: "fallback" # Should containt the path to the fallback page after src/pages/[locale]/...
