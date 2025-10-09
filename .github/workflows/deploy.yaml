@@ -37,7 +37,7 @@ jobs:
       - name: "Upload to cdn"
         uses: nais/deploy/actions/cdn-upload/v2@master
         with:
-          team: min-side # Change this to your team name
+          team: teampam # Change this to your team name
           source: ./dist/client/_astro
           destination: 'pam-min-side-microfrontend' # Change this to your application name
 
@@ -45,7 +45,7 @@ jobs:
         uses: nais/docker-build-push@v0
         id: docker-build-push
         with:
-          team: min-side # Change this to your team name
+          team: teampam # Change this to your team name
 
     outputs:
       image: ${{ steps.docker-build-push.outputs.image }}
