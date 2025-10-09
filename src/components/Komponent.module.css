@@ -5,9 +5,10 @@
 
 .heading {
     margin-block-end: var(--a-spacing-2) !important;
+    color: var(--a-text-default);
 }
 
-.flex {
+.komponentContainer {
     display: flex;
     flex-direction: row;
     align-items: center;

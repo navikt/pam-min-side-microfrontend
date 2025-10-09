@@ -4,6 +4,7 @@ on:
     branches:
       - "main"
       - "dev-*"
+      - "feature/*"
 
 jobs:
   build:
@@ -38,7 +39,7 @@ jobs:
         with:
           team: min-side # Change this to your team name
           source: ./dist/client/_astro
-          destination: 'pam-min-side-micofrontend' # Change this to your application name
+          destination: 'pam-min-side-microfrontend' # Change this to your application name
 
       - name: "Build and push"
         uses: nais/docker-build-push@v0
@@ -53,9 +54,9 @@ jobs:
     uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v3.yaml@main
     needs: build
     with:
-      id: "pam-min-side-micofrontend" # Change this to your application name
-      url: "http://pam-min-side-micofrontend" # Change the url to contain your application name. Example: http://my-app
-      appname: "pam-min-side-micofrontend" # Change this to your application name
+      id: "pam-min-side-microfrontend" # Change this to your application name
+      url: "http://pam-min-side-microfrontend" # Change the url to contain your application name. Example: http://my-app
+      appname: "pam-min-side-microfrontend" # Change this to your application name
       namespace: "teampam" # Change this to your namespace
       cluster: dev-gcp
       commitmsg: ${{ github.event.head_commit.message}}
@@ -68,9 +69,9 @@ jobs:
   #   uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v3.yaml@main
   #   needs: build
   #   with:
-  #     id: "pam-min-side-micofrontend-id"
-  #     url: "http://pam-min-side-micofrontend.min-side"
-  #     appname: "pam-min-side-micofrontend"
+  #     id: "pam-min-side-microfrontend-id"
+  #     url: "http://pam-min-side-microfrontend.min-side"
+  #     appname: "pam-min-side-microfrontend"
   #     namespace: "teampam"
   #     cluster: prod-gcp
   #     commitmsg: ${{ github.event.head_commit.message}}

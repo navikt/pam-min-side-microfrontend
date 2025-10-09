@@ -1,4 +1,4 @@
-# pam-min-side-micofrontend
+# pam-min-side-microfrontend
 
 Kan brukes som utgangspunkt for å opprette nye server-side rendrede microfrontends til Min Side.
 

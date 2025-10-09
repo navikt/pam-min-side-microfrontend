@@ -12,7 +12,7 @@ interface Props {
 const Komponent = ({ heading, description, cvUrl }: Props) => {
   return (
     <LinkCard href={cvUrl}>
-      <div className={styles.flex}>
+      <div className={styles.komponentContainer}>
         <div>
           <Piktogram />
         </div>
