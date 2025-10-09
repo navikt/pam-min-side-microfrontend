@@ -55,7 +55,7 @@ jobs:
     needs: build
     with:
       id: "pam-min-side-microfrontend" # Change this to your application name
-      url: "http://pam-min-side-microfrontend" # Change the url to contain your application name. Example: http://my-app
+      url: "http://pam-min-side-microfrontend.teampam" # Change the url to contain your application name. Example: http://my-app
       appname: "pam-min-side-microfrontend" # Change this to your application name
       namespace: "teampam" # Change this to your namespace
       cluster: dev-gcp
@@ -70,7 +70,7 @@ jobs:
   #   needs: build
   #   with:
   #     id: "pam-min-side-microfrontend-id"
-  #     url: "http://pam-min-side-microfrontend.min-side"
+  #     url: "http://pam-min-side-microfrontend.teampam"
   #     appname: "pam-min-side-microfrontend"
   #     namespace: "teampam"
   #     cluster: prod-gcp
