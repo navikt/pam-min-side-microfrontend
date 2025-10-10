@@ -53,10 +53,10 @@ export default defineConfig({
   }),
   env: {
     schema: {
-      EXAMPLE_API_URL: envField.string({
+      MIN_CV_URL: envField.string({
         context: "server",
         access: "secret",
-        default: "http://localhost:3000/api/tms-astro-template",
+        default: "https://www.nav.no/min-cv",
       }),
     },
   },

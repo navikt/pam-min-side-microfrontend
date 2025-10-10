@@ -1,10 +1,9 @@
 ---
 import styles from "./LinkCard.module.css";
-
-const { href } = Astro.props;
+import { MIN_CV_URL } from "astro:env/server";
 ---
 
-<a id={styles.linkcard} class="navds-panel navds-link-panel" href={href}>
+<a id={styles.linkcard} class="navds-panel navds-link-panel" href={MIN_CV_URL}>
   <div class="navds-link-panel__content">
     <slot />
   </div>
