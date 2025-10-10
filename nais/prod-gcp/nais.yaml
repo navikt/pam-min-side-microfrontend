@@ -16,8 +16,6 @@ spec:
   readiness:
     path: /api/internal/isReady
     initialDelay: 10
-  ingresses:
-    - https://pam-min-side-microfrontend.nav.no
   replicas:
     min: 2
     max: 2

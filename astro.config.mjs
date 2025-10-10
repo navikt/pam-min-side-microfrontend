@@ -8,7 +8,7 @@ import importmap from "./importmap.json";
 // https://astro.build/config
 export default defineConfig({
   build: {
-    assetsPrefix: "https://cdn.nav.no/min-side/pam-min-side-microfrontend",
+    assetsPrefix: "https://cdn.nav.no/teampam/pam-min-side-microfrontend",
     inlineStylesheets: "always",
   },
   vite: {
