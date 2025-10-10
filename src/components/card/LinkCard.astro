@@ -1,0 +1,22 @@
+---
+import styles from "./LinkCard.module.css";
+
+const { href } = Astro.props;
+---
+
+<a id={styles.linkcard} class="navds-panel navds-link-panel" href={href}>
+  <div class="navds-link-panel__content">
+    <slot />
+  </div>
+  <svg id={styles.linkcardChevron} class="navds-link-panel__chevron" width="24" height="24" viewBox="0 0 24 24"
+       aria-hidden="true">
+    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" />
+  </svg>
+</a>
+
+<script>
+  import { logEvent } from "@src/utils/analytics";
+
+  const linkCard = document.querySelector("#linkCard");
+  linkCard?.addEventListener("click", () => logEvent(Astro.props.href));
+</script>
