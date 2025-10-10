@@ -15,7 +15,9 @@ import { MIN_CV_URL } from "astro:env/server";
 
 <script>
   import { logEvent } from "@src/utils/analytics";
+  import { logger } from "@src/utils/logger.ts";
 
   const linkCard = document.querySelector("#linkCard");
+  logger.info("Jeg har funnet linkCard ?", linkCard);
   linkCard?.addEventListener("click", () => logEvent(Astro.props.href));
 </script>
