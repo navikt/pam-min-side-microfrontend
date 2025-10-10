@@ -1,6 +1,9 @@
 ---
 import styles from "./LinkCard.module.css";
 import { MIN_CV_URL } from "astro:env/server";
+import { logger } from "@src/utils/logger.ts";
+
+logger.info(`pam-min-side-microfrontend ble lastet inn med redirectUrl lik ${MIN_CV_URL}.`);
 ---
 
 <a id={styles.linkcard} class="navds-panel navds-link-panel" href={MIN_CV_URL}>
@@ -14,10 +17,8 @@ import { MIN_CV_URL } from "astro:env/server";
 </a>
 
 <script>
-  import { logEvent } from "@src/utils/analytics";
-  import { logger } from "@src/utils/logger.ts";
+  import { logClickEvent } from "@src/utils/analytics.ts";
 
   const linkCard = document.querySelector("#linkCard");
-  logger.info("Jeg har funnet linkCard ?", linkCard);
-  linkCard?.addEventListener("click", () => logEvent(Astro.props.href));
+  linkCard?.addEventListener("click", () => logClickEvent());
 </script>
