@@ -1,7 +1,6 @@
 /* Do not specify margin for the microfrontend */
 
 .microfrontend {
-    padding: 2rem;
     margin: auto;
     max-width: 808px;
     display: grid;
