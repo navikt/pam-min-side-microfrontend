@@ -4,7 +4,6 @@
     padding: 2rem;
     margin: auto;
     max-width: 808px;
-    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
