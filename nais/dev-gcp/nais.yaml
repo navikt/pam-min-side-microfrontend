@@ -16,9 +16,11 @@ spec:
   readiness:
     path: /api/internal/isReady
     initialDelay: 10
+  ingresses:
+    - https://pam-min-side-microfrontend.ansatt.dev.nav.no
   replicas:
     min: 2
-    max: 4
+    max: 2
   accessPolicy:
     inbound:
       rules:
