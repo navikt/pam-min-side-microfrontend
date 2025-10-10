@@ -1,6 +1,5 @@
 .detail {
     color: var(--a-text-default);
-    margin-block-end: var(--a-spacing-4) !important;
     margin-block-start: 0 !important;
 }
 
