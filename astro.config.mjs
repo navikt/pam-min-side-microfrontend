@@ -1,4 +1,5 @@
 import node from "@astrojs/node";
+import react from "@astrojs/react";
 import { defineConfig, envField } from "astro/config";
 import prefixer from "postcss-prefix-selector";
 
@@ -20,6 +21,7 @@ export default defineConfig({
       },
     },
   },
+  integrations: [react()],
   i18n: {
     defaultLocale: "nb",
     locales: ["nb", "nn", "en"],
