@@ -1,0 +1,43 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: pam-min-side-microfrontend # Change this to your application name
+  namespace: teampam # Change this to your namespace
+  labels:
+    team: teampam # Change this to your team name
+spec:
+  tokenx:
+    enabled: true
+  image: {{ image }}
+  port: 3000
+  liveness:
+    path: /api/internal/isAlive
+    initialDelay: 10
+  readiness:
+    path: /api/internal/isReady
+    initialDelay: 10
+  replicas:
+    min: 2
+    max: 2
+  accessPolicy:
+    inbound:
+      rules:
+        - application: tms-min-side
+          namespace: min-side
+  observability:
+    autoInstrumentation:
+      enabled: true
+      runtime: nodejs
+    logging:
+      destinations:
+        - id: loki
+        - id: elastic
+  resources:
+    limits:
+      memory: 768Mi
+    requests:
+      cpu: "20m"
+      memory: 128Mi
+  env:
+    - name: MIN_CV_URL
+      value: "https://www.nav.no/min-cv"

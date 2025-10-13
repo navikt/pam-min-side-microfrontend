@@ -1,26 +1,25 @@
 # pam-min-side-microfrontend
 
-Kan brukes som utgangspunkt for å opprette nye microfrontends i Min Side.
-
-# Tilpass repoet
-
-1. Søk etter og erstatt pam-min-side-microfrontend med navnet på den nye appen.
-2. Legg til appen i [nais/frontend-plattform](https://github.com/nais/frontend-plattform/blob/main/teams.tfvars) (hvis teamet ikke er registrert så kan du gjøre det [sånn](https://github.com/nais/frontend-plattform/tree/main?tab=readme-ov-file#registrere-team-i-cdn)).
-3. Sett inn riktig team navn under cdn-upload i workflowen.
-4. Kommenter inn cdn-upload, upload-dev og upload-prod i workflowen.
-5. Ta kontakt med oss på slack i #minside-microfrontends for å få tilgang til å trigge workflowen.
-
-Micfrontenden blir lastet opp til NAV sin CDN ved push til main.
+Kan brukes som utgangspunkt for å opprette nye server-side rendrede microfrontends til Min Side.
 
 # Kom i gang
 
-1. Bygg pam-min-side-microfrontend ved å kjøre npm run build
-2. Start appen lokalt ved å kjøre npm run dev
-3. Appen nås på http://localhost:3000
+## Tilpasse templatet til ditt prosjekt
 
-# Amplitude
+1. `CMD + Shift + F` og søk etter `tms-microfrontend-template-ssr` og erstatt dette med ditt applikasjonsnavn.
+2. Tilpass innholdet i `nais/dev-gcp/nais.yaml` og `nais/prod-gcp/nais.yaml` til ditt prosjekt.
+3. Tilpass innholdet i `.github/workflows/deploy.yaml` til ditt prosjekt.
+4. Be om tilgang til å oppdatere manifestet og deploye applikasjonen til nais på slack kanalen [#minside-microfrontends](https://nav-it.slack.com/archives/C04V21LT27P).
+5. Kommenter ut `update-manifest-prod-gcp` og `deploy-prod-gcp` stegene i `.github/workflows/deploy.yaml`.
 
-Appen er satt opp til å bruke amplitude. Trykk på appen logges som et "navigere"-event.
+NOTE: Du bør se på konteksten i filen du endrer.
+
+# Kjøre appen lokalt
+
+1. Installer dependencies: `npm i`
+2. Start hono mockserver: `npm run mock`
+3. Med mockserver kjørende i egen terminal, start appen: `npm run dev`
+4. Appen nås på http://localhost:4321/
 
 # Henvendelser
 
@@ -28,4 +27,4 @@ Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på git
 
 ## For NAV-ansatte
 
-Interne henvendelser kan sendes via Slack i kanalen #team-personbruker.
+Interne henvendelser kan sendes via Slack i kanalen [#minside-microfrontends](https://nav-it.slack.com/archives/C04V21LT27P).

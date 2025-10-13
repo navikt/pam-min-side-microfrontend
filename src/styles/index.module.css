@@ -1,0 +1,12 @@
+/* Do not specify margin for the microfrontend */
+
+.microfrontend {
+    margin: auto;
+    max-width: 808px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--navds-semantic-color-canvas-background);
+    font-family: "Source Sans Pro", Arial, sans-serif;
+}
