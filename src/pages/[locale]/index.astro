@@ -17,8 +17,8 @@ const language = Astro.currentLocale as Language;
   </div>
 </section>
 <script>
-  import { logEvent } from "@src/utils/analytics";
+  import { logClickEvent } from "@src/utils/analytics";
 
   const microfrontend = document.querySelector("#link");
-  microfrontend?.addEventListener("click", () => logEvent("Lenke"));
+  microfrontend?.addEventListener("click", () => logClickEvent());
 </script>
