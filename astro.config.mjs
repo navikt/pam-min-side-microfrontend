@@ -14,7 +14,7 @@ export default defineConfig({
       postcss: {
         plugins: [
           prefixer({
-            prefix: ".pam-min-side-microfrontend",
+            prefix: ":where(.pam-min-side-microfrontend)",
             ignoreFiles: [/module.css/],
           }),
         ],
@@ -27,6 +27,7 @@ export default defineConfig({
     locales: ["nb", "nn", "en"],
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
     },
   },
   output: "server",

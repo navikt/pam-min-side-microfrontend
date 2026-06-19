@@ -4,14 +4,14 @@
     flex-direction: row;
     padding: 16px;
     border-radius: 8px;
-    background-color: var(--a-surface-default);
+    background-color: var(--ax-bg-raised);
     text-decoration: none;
-    box-shadow: var(--a-shadow-xsmall);
+    box-shadow: var(--ax-shadow-dialog);
 }
 
 #linkcard:hover {
-    border-color: var(--a-border-subtle);
-    box-shadow: var(--a-shadow-small);
+    border-color: var(--ax-border-subtle);
+    box-shadow: var(--ax-shadow-dialog);
 
     svg {
         transition-duration: 0.2s;
@@ -37,5 +37,5 @@
     align-self: center;
     font-size: 24px;
     font-weight: 700;
-    color: var(--a-text-subtle);
+    color: var(--ax-text-default);
 }
