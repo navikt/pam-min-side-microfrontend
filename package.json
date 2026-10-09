@@ -21,7 +21,7 @@
     "@navikt/nav-dekoratoren-moduler": "3.7.3",
     "@navikt/oasis": "3.8.0",
     "@navikt/pino-logger": "5.0.1",
-    "astro": "6.4.8",
+    "astro": "7.2.8",
     "pino": "10.3.1",
     "react": "19.3.0",
     "react-dom": "19.3.0"
