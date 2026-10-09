@@ -17,12 +17,12 @@ jobs:
       packages: "write"
 
     steps:
-      - uses: "actions/checkout@v5"
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
         with:
           version: 10.12.1
           run_install: false
-      - uses: "actions/setup-node@v5"
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
           registry-url: "https://npm.pkg.github.com"
@@ -37,14 +37,15 @@ jobs:
         run: "pnpm run build"
 
       - name: "Upload to cdn"
-        uses: nais/deploy/actions/cdn-upload/v2@master
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        uses: nais/deploy/actions/cdn-upload/v2@9850be311389ca754d9a9f2280615419d738c891 # v3
         with:
           team: teampam # Change this to your team name
           source: ./dist/client/_astro
           destination: 'pam-min-side-microfrontend' # Change this to your application name
 
       - name: "Build and push"
-        uses: nais/docker-build-push@v0
+        uses: nais/docker-build-push@423a915c9b72edf2ba848b88171ccb0489e2a40a # v0
         id: docker-build-push
         with:
           team: teampam # Change this to your team name
@@ -53,6 +54,7 @@ jobs:
       image: ${{ steps.docker-build-push.outputs.image }}
 
   update-manifest-dev:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     uses: navikt/tms-deploy/.github/workflows/oppdater-mikrofrontend-manifest-v3.yaml@main
     needs: build
     with:
@@ -82,13 +84,14 @@ jobs:
     secrets: inherit
 
   deploy-dev:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: "ubuntu-latest"
     permissions:
       contents: "read"
       id-token: "write"
     needs: [build, update-manifest-dev]
     steps:
-      - uses: "actions/checkout@v4"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: "Deploy to dev"
         uses: "nais/deploy/actions/deploy@v2"
         env:
@@ -102,10 +105,9 @@ jobs:
     permissions:
       contents: "read"
       id-token: "write"
-    needs: [build, update-manifest-prod]
-
+    needs: [build, update-manifest-prod, deploy-dev]
     steps:
-      - uses: "actions/checkout@v4"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: "Deploy to prod"
         uses: "nais/deploy/actions/deploy@v2"
         env:
