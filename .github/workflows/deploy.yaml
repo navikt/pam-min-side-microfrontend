@@ -22,7 +22,7 @@ jobs:
         with:
           version: 10.12.1
           run_install: false
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
           registry-url: "https://npm.pkg.github.com"
@@ -38,14 +38,14 @@ jobs:
 
       - name: "Upload to cdn"
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
-        uses: nais/deploy/actions/cdn-upload/v2@9850be311389ca754d9a9f2280615419d738c891 # v3
+        uses: nais/deploy/actions/cdn-upload/v2@d003bddf74ce5b96fa3056ae60bd4b9b3bbc89ef # v3
         with:
           team: teampam # Change this to your team name
           source: ./dist/client/_astro
           destination: 'pam-min-side-microfrontend' # Change this to your application name
 
       - name: "Build and push"
-        uses: nais/docker-build-push@bfe52e3ad6d0e96fd1056a03acb7b619aaffb39d # v0
+        uses: nais/docker-build-push@dd7421d5068057a020ca46ead966c26190c516b1 # v0
         id: docker-build-push
         with:
           team: teampam # Change this to your team name
