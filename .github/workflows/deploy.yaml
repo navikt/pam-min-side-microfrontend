@@ -5,6 +5,8 @@ on:
       - "main"
       - "dev-*"
       - "feature/**"
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -49,6 +51,7 @@ jobs:
         id: docker-build-push
         with:
           team: teampam # Change this to your team name
+          push_image: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
 
     outputs:
       image: ${{ steps.docker-build-push.outputs.image }}
