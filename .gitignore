@@ -4,6 +4,8 @@ node_modules/
 # Build output
 dist/
 build/
+test-results/
+/e2e/screenshots/
 
 # TypeScript cache
 *.tsbuildinfo
