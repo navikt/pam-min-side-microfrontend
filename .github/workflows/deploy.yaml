@@ -38,6 +38,11 @@ jobs:
       - name: "Build application"
         run: "pnpm run build"
 
+      - name: "Test the rendered microfrontend"
+        run: |
+          pnpm exec playwright install --with-deps chromium --only-shell
+          pnpm test:e2e
+
       - name: "Upload to cdn"
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
         uses: nais/deploy/actions/cdn-upload/v2@427e29c94d911626a023a76f402f6dcae1f840b7 # v3
